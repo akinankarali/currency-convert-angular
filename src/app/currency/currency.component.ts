@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import { MyApiResponse } from '../services/api.service';
 import { CommonModule } from '@angular/common';
+
+interface CurrencyData {
+  img: string;
+  id: string;
+  value: number;
+}
 
 @Component({
   selector: 'currency',
@@ -11,16 +16,24 @@ import { CommonModule } from '@angular/common';
   styleUrl: './currency.component.scss'
 })
 export class CurrencyComponent implements OnInit {
-  currencyList = {};
-  isLoading = true;
+  currencyList: any[] = [];
 
   constructor(private apiService: ApiService) {}
 
+  currencyName = 'EUR';
+
   ngOnInit() {
-    this.apiService.getData()
-      .subscribe(data => {
-        this.currencyList = data.rates;
-        this.isLoading = false;
-      });
-  }
+      this.apiService.getData(this.currencyName)
+          .subscribe({
+            next: (data => {
+              this.currencyList = Object.entries(data.rates)
+              .filter(([key, value]) => key === 'EUR' || key === 'USD' || key === 'GBP')
+              .map(([key, value]) => ({ img: '', id: key, value }) as CurrencyData);
+            }),
+            error: (error: any) => {
+              console.error('Error:', error.message);
+            },
+            complete: () => {},
+          });
+   }
 }

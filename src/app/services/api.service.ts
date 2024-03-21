@@ -14,11 +14,11 @@ export interface MyApiResponse {
 
 export class ApiService {
 
-  private apiUrl = 'https://open.er-api.com/v6/latest/USD';
   
   constructor(private http: HttpClient) {}
-
-  getData(): Observable<MyApiResponse> {
-    return this.http.get<MyApiResponse>(this.apiUrl);
+  
+  getData(currencyName: string): Observable<MyApiResponse> {
+    const apiUrl = `https://open.er-api.com/v6/latest/${currencyName}`;
+    return this.http.get<MyApiResponse>(apiUrl);
   }
 }

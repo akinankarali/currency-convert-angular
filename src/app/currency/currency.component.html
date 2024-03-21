@@ -1,3 +1,5 @@
 <ul>
-    <li *ngFor="let rate of currencyList | keyvalue"> {{ rate.key }} {{ rate.value}}</li>
+    <li *ngFor="let currency of currencyList">
+        {{ currency.id }} {{ currency.value }}
+    </li>
 </ul>
