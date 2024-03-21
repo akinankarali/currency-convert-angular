@@ -23,17 +23,21 @@ export class CurrencyComponent implements OnInit {
   currencyName = 'EUR';
 
   ngOnInit() {
-      this.apiService.getData(this.currencyName)
-          .subscribe({
-            next: (data => {
-              this.currencyList = Object.entries(data.rates)
-              .filter(([key, value]) => key === 'EUR' || key === 'USD' || key === 'GBP')
-              .map(([key, value]) => ({ img: '', id: key, value }) as CurrencyData);
-            }),
-            error: (error: any) => {
-              console.error('Error:', error.message);
-            },
-            complete: () => {},
-          });
+      this.getCurrencyData();
    }
+
+  getCurrencyData(){
+    this.apiService.getData(this.currencyName)
+    .subscribe({
+      next: (data => {
+        this.currencyList = Object.entries(data.rates)
+        .filter(([key, value]) => key === 'EUR' || key === 'USD' || key === 'GBP')
+        .map(([key, value]) => ({ img: '', id: key, value }) as CurrencyData);
+      }),
+      error: (error: any) => {
+        console.error('Error:', error.message);
+      },
+      complete: () => {},
+    });
+  }
 }
