@@ -1,0 +1,17 @@
+<div class="feature-section">
+  @for (card of cards; track card.title) {
+  <div class="feature-card">
+    <c-image class="feature-card-image" [src]="card.src" [alt]="card.alt" />
+    <text
+      elementType="h4"
+      [text]="card.title"
+      class="large dark-green bold text-center feature-card-title"
+    />
+    <text
+      elementType="p"
+      [text]="card.description"
+      class="regular dark-grey bold text-center"
+    />
+  </div>
+  }
+</div>

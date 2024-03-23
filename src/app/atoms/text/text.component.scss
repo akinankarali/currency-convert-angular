@@ -1,0 +1,56 @@
+.regular {
+    font-size: var(--text-regular) !important;
+}
+
+.medium {
+    font-size: var(--text-medium) !important;
+}
+
+.large {
+    font-size: var(--text-large) !important;
+}
+
+.xlarge {
+    font-size: var(--text-xlarge) !important;
+}
+
+.dark-grey {
+    color: var(--color-dark-grey);
+}
+
+.green {
+    color: var(--color-green);
+}
+
+.dark-green {
+    color: var(--color-dark-green);
+}
+
+.light-green {
+    color: var(--color-light-green);
+}
+
+.light-grey {
+    color: var(--color-light-grey);
+}
+
+.grey {
+    color: var(--color-grey);
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.description {
+    margin-top: 32px;
+    margin-bottom: 36px;
+}
+
+.text-center {
+    text-align: center;
+}

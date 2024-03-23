@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import "fonts";
+
+:root {
+  --color-dark-green: #63a022;
+  --color-light-green: #dfedcf;
+  --color-green: #87c241;
+  --color-dark-grey: #354e57;
+  --color-light-grey: #eef3f4;
+  --color-grey: #848f93;
+  --color-white: #ffffff;
+
+  --font-family: ProximaNova;
+
+  --text-regular: 16px;
+  --text-medium: 20px;
+  --text-large: 28px;
+  --text-xlarge: 48px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 80px 0 0 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: var(--font-family);
+  line-height: 1.2;
+
+  @media (max-width: 992px) {
+    padding: 0 16px;
+  }
+}

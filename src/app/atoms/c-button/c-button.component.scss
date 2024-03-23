@@ -1,0 +1,59 @@
+.button {
+  padding: 8px 20px;
+  font-size: var(--text-medium);
+  background-color: var(--color-white);
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+.login-button {
+  padding: 8px;
+}
+
+.border-green {
+  border: 2px solid var(--color-green);
+  border-radius: 8px;
+}
+
+.no-border {
+  border: none;
+}
+
+.text-dark-grey {
+  color: var(--color-dark-grey);
+  transition:
+    color 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+  &:hover {
+    color: var(--color-green);
+    transform: scaleX(1.03);
+  }
+}
+
+.text-green {
+  color: var(--color-green);
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-green);
+  }
+}
+
+.text-regular {
+  font-size: var(--text-regular);
+  font-weight: bold;
+}
+
+.text-medium {
+  font-size: var(--text-medium);
+  font-weight: bold;
+}
+
+.text-large {
+  font-size: var(--text-large);
+  font-weight: bold;
+}
+
+.text-xlarge {
+  font-size: var(--text-xlarge);
+  font-weight: bold;
+}

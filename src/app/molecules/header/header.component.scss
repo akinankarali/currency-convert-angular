@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .right-side {
+        .img-wrapper {
+            display: none;
+            @media screen and (min-width: 768px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: var(--color-light-grey);
+                border-radius: 50%;
+                width: 400px;
+                height: 400px;
+                margin: 50px 0;
+            }
+
+            @media screen and (min-width: 992px) {
+                width: 500px;
+                height: 500px;
+            }
+        }
+    }
+}

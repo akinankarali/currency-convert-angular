@@ -1,0 +1,10 @@
+<div [ngSwitch]="elementType">
+  <h1 *ngSwitchCase="'h1'" [class]="class">{{ text }}</h1>
+  <h2 *ngSwitchCase="'h2'" [class]="class">{{ text }}</h2>
+  <h3 *ngSwitchCase="'h3'" [class]="class">{{ text }}</h3>
+  <h4 *ngSwitchCase="'h4'" [class]="class">{{ text }}</h4>
+  <h5 *ngSwitchCase="'h5'" [class]="class">{{ text }}</h5>
+  <h6 *ngSwitchCase="'h6'" [class]="class">{{ text }}</h6>
+  <p *ngSwitchCase="'p'" [class]="class">{{ text }}</p>
+  <span *ngSwitchDefault>{{ text }}</span>
+</div>
