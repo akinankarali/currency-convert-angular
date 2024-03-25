@@ -3,5 +3,8 @@
   <c-button
     text="LOGIN"
     class="no-border button text-dark-grey text-regular login-button"
+    (click)="openModal()"
   />
+
+  <modal class="modal" *ngIf="isModalOpen" (closeModal)="closeModal()" />
 </div>

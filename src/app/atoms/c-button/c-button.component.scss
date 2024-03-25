@@ -57,3 +57,30 @@
   font-size: var(--text-xlarge);
   font-weight: bold;
 }
+
+.background-green {
+  background-color: var(--color-green);
+  color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-dark-green);
+    border-color: var(--color-dark-green);
+  }
+}
+
+.helper-button {
+  background-color: transparent;
+  border: none;
+  color: var(--color-dark-grey);
+  font-size: 16px;
+  padding: 4px;
+
+  &:hover {
+    color: var(--color-dark-grey);
+    background-color: transparent;
+  }
+}
+
+.full-width {
+  width: 100%;
+}

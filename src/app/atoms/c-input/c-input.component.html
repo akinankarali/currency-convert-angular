@@ -1,0 +1,11 @@
+<div class="input-container">
+  <label for="input-field">{{ label }}</label>
+  <input
+    type="{{ type }}"
+    id="input-field"
+    [class]="class"
+    [(ngModel)]="value"
+    (change)="onValueChange($event)"
+    placeholder="{{ placeholder }}"
+  />
+</div>

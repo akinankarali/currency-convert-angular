@@ -1,0 +1,45 @@
+<div class="modal-background" (click)="close()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <c-image
+        class="modal-image"
+        src="../../../assets/logo.svg"
+        alt="modal-image"
+      />
+    </div>
+    <div class="modal-body">
+      <text
+        elementType="h4"
+        text="Login Account"
+        class="large dark-green bold modal-title"
+      />
+
+      <c-input
+        class="modal-input"
+        placeholder="Email ID"
+        (input)="inputChanged($event)"
+      ></c-input>
+      <c-input
+        class="modal-input"
+        placeholder="Password"
+        (input)="inputChanged($event)"
+      ></c-input>
+
+      <div class="modal-help">
+        <c-button
+          text="I don't have an account"
+          class="button border-green text-medium text-green helper-button"
+        />
+        <c-button
+          text="Forgot your password?"
+          class="button border-green text-medium text-green helper-button"
+        />
+      </div>
+
+      <c-button
+        text="Login"
+        class="button background-green border-green text-medium full-width"
+      />
+    </div>
+  </div>
+</div>

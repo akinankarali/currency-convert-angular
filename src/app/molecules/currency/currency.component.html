@@ -1,5 +1,62 @@
-<ul>
-  <li *ngFor="let currency of currencyList">
-    {{ currency.id }} {{ currency.value }}
-  </li>
-</ul>
+<div class="currency">
+  <div class="currency-info">
+    <c-image
+      class="currency-image"
+      src="../../../assets/convert-icon.svg"
+      alt="currency"
+    />
+    <text
+      elementType="h4"
+      text="Convert Fund"
+      class="large dark-grey bold currency-title"
+    />
+  </div>
+  <div class="currency-convert">
+    <c-input
+      class="currency-convert-input"
+      label="Amount"
+      placeholder="$10.00"
+      (input)="inputChanged($event)"
+    />
+    <multiselect
+      class="currency-convert-multiselect"
+      [options]="filteredCurrencyListFrom"
+      [label]="filteredCurrencyListFromLabel"
+      [defaultValue]="defaultValueFrom"
+      defaultValueImg="../../../assets/american-flag.svg"
+      (selectedValueChange)="onSelectedValueChange($event)"
+    ></multiselect>
+    <c-image
+      class="currency-exchange"
+      src="../../../assets/exchange-icon.svg"
+      alt="exchange"
+    ></c-image>
+    <multiselect
+      class="currency-convert-multiselect"
+      [options]="filteredCurrencyListTo"
+      [label]="filteredCurrencyListToLabel"
+      [defaultValue]="defaultValueTo"
+      defaultValueImg="../../../assets/eur-flag.svg"
+      (selectedValueChange)="onSelectedValueChange($event)"
+    ></multiselect>
+  </div>
+
+  <c-button
+    (click)="handleConvert()"
+    text="Convert"
+    class="button border-green background-green text-medium convert-button"
+  />
+</div>
+
+<div class="convert-result" *ngIf="isShowResult">
+  <text
+    elementType="h5"
+    [text]="inputValueText"
+    class="large grey bold currency-title convert-result-text"
+  />
+  <text
+    elementType="h5"
+    [text]="convertResult"
+    class="xlarge dark-grey bold currency-title convert-result-text"
+  />
+</div>

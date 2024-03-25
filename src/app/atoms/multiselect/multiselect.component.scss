@@ -1,0 +1,70 @@
+.multiselect-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .multiselect-wrapper {
+        border: 1px solid var(--color-grey);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        cursor: pointer;
+        min-width: 285px;
+        margin-top: 8px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
+
+        .selected-value {
+            margin-right: 8px;
+            color: var(--color-dark-grey);
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease-in-out;
+
+            &.rotated {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .options-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-top: none;
+        border-radius: 4px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
+        z-index: 1;
+
+        li {
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            color: var(--color-dark-grey);
+
+            &:not(:last-child) {
+                border-bottom: 1px solid var(--color-light-grey);
+            }
+
+            &:hover {
+                background-color: #f0f0f0;
+            }
+        }
+    }
+}
+label {
+    color: var(--color-dark-grey);
+}

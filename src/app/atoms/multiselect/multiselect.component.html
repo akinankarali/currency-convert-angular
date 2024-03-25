@@ -1,0 +1,39 @@
+<div class="multiselect-container">
+  <label>{{ label }}</label>
+  <div class="multiselect-wrapper" (click)="toggle()" [class]="class">
+    <span class="selected-value">
+      <c-image
+        class="multiselect-item-image"
+        [src]="selectedValueImg"
+        alt="multiselect-item-image"
+      />
+      {{ selectedValue }}
+    </span>
+    <img
+      src="../../../assets/expand-more.svg"
+      alt=""
+      [ngClass]="{ 'rotated': isOpen }"
+      *ngIf="!isOpen; else expandedIcon"
+    />
+    <ng-template #expandedIcon>
+      <img
+        src="../../../assets/expand-more.svg"
+        alt=""
+        class="arrow-icon rotated"
+      />
+    </ng-template>
+  </div>
+  <ul class="options-list" [hidden]="!isOpen">
+    <li
+      *ngFor="let option of options"
+      (click)="selectOption(option.id, option.value)"
+    >
+      <c-image
+        class="multiselect-item-image"
+        [src]="option.img"
+        alt="multiselect-item-image"
+      />
+      <span>{{ option.id }}</span>
+    </li>
+  </ul>
+</div>
